@@ -1,0 +1,22 @@
+GET http://localhost:8080/jobs
+
+###
+
+POST http://localhost:8080/jobs
+Content-Type: application/json
+
+{
+  "id": 1,
+  "company": "Amazon",
+  "role": "SDE Intern",
+  "status": "Applied",
+  "appliedDate": "2026-03-10"
+}
+
+###
+
+DELETE http://localhost:8080/jobs/1
+
+###
+
+GET http://localhost:8080/jobs

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Job Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>Job Application Tracker</h1>
+<p>Track and manage your job applications</p>
+</div>
+
+<div class="container">
+
+<!-- Stats -->
+
+<div class="stats">
+
+<div class="stat-card">
+<h3 id="totalJobs">0</h3>
+<p>Total Jobs</p>
+</div>
+
+<div class="stat-card applied-card">
+<h3 id="appliedJobs">0</h3>
+<p>Applied</p>
+</div>
+
+<div class="stat-card interview-card">
+<h3 id="interviewJobs">0</h3>
+<p>Interview</p>
+</div>
+
+<div class="stat-card offer-card">
+<h3 id="offerJobs">0</h3>
+<p>Offer</p>
+</div>
+
+<div class="stat-card rejected-card">
+<h3 id="rejectedJobs">0</h3>
+<p>Rejected</p>
+</div>
+
+</div>
+
+<!-- Add Job -->
+
+<div class="card">
+
+<h2>Add Job</h2>
+
+<input id="company" placeholder="Company Name">
+<input id="role" placeholder="Role">
+
+<select id="status">
+<option value="" disabled selected>Select Status</option>
+<option value="Applied">Applied</option>
+<option value="Interview">Interview</option>
+<option value="Offer">Offer</option>
+<option value="Rejected">Rejected</option>
+</select>
+
+<input type="date" id="interviewDate">
+
+<button onclick="addJob()">Add Job</button>
+
+</div>
+
+<!-- Job Table -->
+
+<div class="card">
+
+<h2>Your Applications</h2>
+
+<div class="filters">
+
+<input id="search" placeholder="Search company or role" onkeyup="loadJobs()">
+
+<select id="filterStatus" onchange="loadJobs()">
+<option value="">All Status</option>
+<option value="Applied">Applied</option>
+<option value="Interview">Interview</option>
+<option value="Offer">Offer</option>
+<option value="Rejected">Rejected</option>
+</select>
+
+</div>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Company</th>
+<th>Role</th>
+<th>Status</th>
+<th>Date</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="jobTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- Floating Calendar Button -->
+
+<div id="calendarBtn">📅</div>
+
+<!-- Calendar Modal -->
+
+<div id="calendarModal">
+
+<div class="calendar-content">
+
+<span id="closeCalendar">&times;</span>
+
+<h2>Interview Calendar</h2>
+
+<div id="calendar"></div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
